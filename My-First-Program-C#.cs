@@ -3,7 +3,8 @@ using System;
 namespace MyCompiler {
     class Program {
         public static void Main(string[] args) {
-            int chips = 5;
+            string chipsString = Console.ReadLine();
+            int chips = int.Parse(chipsString);
             while (chips != 0)
             {
                 Console.WriteLine("There are " + chips + " chips left.");  
