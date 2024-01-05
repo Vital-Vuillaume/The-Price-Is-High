@@ -9,26 +9,35 @@ namespace MyCompiler {
             int nbRng = rng.Next(1, 101);
 
             // Input player
-            string input = Console.ReadLine();
-            int inputResult = int.Parse(input);
-
-            // Find nb
-            while(inputResult != nbRng)
+            int inputResult;
+            bool isValidInput = false;
+            
+            // Sentence
+            string sentence = "Entrez un nombre entre 1 et 100 : ";
+            Console.WriteLine(sentence);
+            
+            do
             {
-                if(inputResult > nbRng)
+                string input = Console.ReadLine();
+                isValidInput = int.TryParse(input, out inputResult);
+                
+                if (!isValidInput)
+                {
+                    Console.WriteLine(sentence);
+                }
+                else if (inputResult > nbRng)
                 {
                     Console.WriteLine("Le nombre " + inputResult + " est trop grand.");
                 }
-                else
+                else if (inputResult < nbRng)
                 {
                     Console.WriteLine("Le nombre " + inputResult + " est trop petit.");
                 }
-                input = Console.ReadLine();
-                inputResult = int.Parse(input);
-            }
+                
+            } while (!isValidInput || inputResult != nbRng);
 
             // Result
-            Console.WriteLine("Bien joue c'etait le nombre " + nbRng);
+            Console.WriteLine("Bien joue c'etait le nombre " + nbRng + ".");
         }
     }
 }
