@@ -8,7 +8,7 @@ namespace MyCompiler {
             Random rng = new Random();
             int nbRng = rng.Next(1, 101);
 
-            // Input player
+            // Input validity
             int inputResult;
             bool isValidInput = false;
             
