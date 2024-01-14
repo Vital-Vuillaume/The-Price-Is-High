@@ -6,7 +6,7 @@ namespace MyCompiler {
             
             // Random nb
             Random rng = new Random();
-            int nbRng = rng.Next(1, 101);
+            int nbRng = rng.Next(0, 101);
 
             // Input validity
             int inputResult;
